@@ -1,5 +1,149 @@
+
+*{
+    list-style: none;
+}
+
+
 .button{
     width: 100px;
     height: 100px;
     
 }
+
+#donutimg{
+    width: 500px;
+    height: 500px;
+}
+#donut-container{
+    width: 500px;
+    height: 500px;
+    background-size: cover;
+    /* transition:  all 0.2s ease-in-out; */
+}
+
+
+
+
+
+/* .rotate_01{
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 150px;
+    height: 150px;
+    margin: -60px 0 0 -280px;
+    -webkit-transition: -webkit-transform 1s;
+}
+.rotate_01:click{
+    -webkit-transform: rotate(360deg) translate(0);
+} */
+/* #donut:hover{
+    transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  } */
+/* #donut:hover{
+    transform: rotate(360deg);
+} */
+
+#donutimg:active{
+    
+    animation: 0.6s rotatefresh 1;
+}
+@keyframes rotatefresh {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+        transition-duration: 0.6s;
+        transition: 0.6s;
+    }
+}
+/* #donutimg:hover{
+    transform: rotate(1080deg);
+}
+
+@keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  } */
+
+  .dropdown-images{
+    height: 70px;
+    width: 70px;
+  }
+
+  .dropdown-images{
+    display: block;
+    margin: auto;
+  }
+  .logo{
+    width: 70px;
+    height: 70px;
+    margin: 20px;
+  
+  }
+  .modal{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 1px solid black;
+    border-radius: 10px;
+    z-index: 10;
+    background-color: aliceblue;
+    width: 500px;
+    max-width: 80%;
+  }
+
+  .modal.active{
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  .modal-header{
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+  }
+  .modal-header {
+    font-size: 1.25rem;
+font-weight: bold;
+}
+
+.modal-header .close-modal{
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.modal-body{
+    padding: 10px 15px;
+}
+#overlay{
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,.5);
+    pointer-events: none;
+}
+/* #overlay.active {
+    opacity: 1;
+    pointer-events: all;
+} */
