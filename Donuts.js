@@ -1,5 +1,5 @@
 class Donuts {
-    constructor(count, autoclick, multiplier){
+    constructor(count, autoclick, multiplier) {
         this._count = count;
         this._autoclick = autoclick;
         this._multiplier = multiplier;
@@ -27,43 +27,34 @@ class Donuts {
         this._clickValue;
     }
 
-
     click() {
         this._count += this._clickValue;
     }
     autoclickClick() {
-        if(this._count >= this._autoclickCost) {
+        if (this._count >= this._autoclickCost) {
             this._count -= this._autoclickCost;
             this._autoclickCost *= 1.1;
-            this._autoclick++;}
-        else{
+            this._autoclick++;
+        }
+        else {
             alert("You cannot afford an autoclicker yet!")
         }
-    //TODO add functionality to the autoclick
+        //TODO add functionality to the autoclick
     }
     multiplierClick() {
-        if(this._count >= this._multiplierCost){
+        if (this._count >= this._multiplierCost) {
             this._count -= this._multiplierCost;
             this._multiplierCost *= 1.1;
             this._multiplier++;
             this._clickValue *= 1.2;
         }
-            else{
-                alert("You cannot afford a multiplier yet!")
-            }
+        else {
+            alert("You cannot afford a multiplier yet!")
         }
     }
+}
 
 
-    // setInterval(() => {
-    //     donut.click();
-    //     countEl.innerText = donut.count();
-    // }, 1000);
-    // getStatus(){
-    //     return "Donuts: " + this._count + " Auto-Clickers: " + this.autoclick + " Multiplier: " + this._multiplier;
-    // }
-    // multiplierFunct(){
-    //     this._count * 2; 
-    // }
+
 
 export default Donuts;

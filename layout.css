@@ -10,7 +10,6 @@
 }
 header{
     z-index: 999;
-    /* position: fixed; */
     top:0;
     left: 0;
     width: 100%;
@@ -104,10 +103,7 @@ header .nav .menu{
     margin: 0;
     padding: 20px;
 }
-.sub-item{
-    
-    
-}
+
 
 #cookieclickerimg{
     height: 80px;

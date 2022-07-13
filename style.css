@@ -3,7 +3,10 @@
     list-style: none;
 }
 
-
+body{
+  background-image: url(donutbackground2.jpg);
+  height: 200px;
+}
 .button{
     width: 100px;
     height: 100px;
@@ -14,40 +17,23 @@
     width: 500px;
     height: 500px;
 }
+
+.container{
+  display: grid;
+grid-template-columns: .4fr 1fr;
+grid-template-rows: 1fr;
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+}
+.buttons{
+  grid-area: 1 / 1 / 2 / 2; 
+}
 #donut-container{
-    width: 500px;
-    height: 500px;
-    background-size: cover;
-    /* transition:  all 0.2s ease-in-out; */
+  grid-area: 1 / 2 / 2 / 3;
 }
 
 
-
-
-
-/* .rotate_01{
-    display: block;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    width: 150px;
-    height: 150px;
-    margin: -60px 0 0 -280px;
-    -webkit-transition: -webkit-transform 1s;
-}
-.rotate_01:click{
-    -webkit-transform: rotate(360deg) translate(0);
-} */
-/* #donut:hover{
-    transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-  } */
-/* #donut:hover{
-    transform: rotate(360deg);
-} */
-
-#donutimg:active{
+.donutimg:active{
     
     animation: 0.6s rotatefresh 1;
 }
@@ -62,18 +48,6 @@
         transition: 0.6s;
     }
 }
-/* #donutimg:hover{
-    transform: rotate(1080deg);
-}
-
-@keyframes rotation {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(359deg);
-    }
-  } */
 
   .dropdown-images{
     height: 70px;
@@ -143,7 +117,21 @@ font-weight: bold;
     background-color: rgba(0,0,0,.5);
     pointer-events: none;
 }
-/* #overlay.active {
-    opacity: 1;
-    pointer-events: all;
-} */
+
+.menu-item{
+  text-decoration: underline;
+color: white;
+
+}
+.modal{
+  color: black;
+}
+
+#donut-container{
+  margin-left: 30%;
+  margin-right: 30%;
+ 
+}
+.donutsvg-container{
+margin-top: 23%;
+}

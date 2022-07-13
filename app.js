@@ -1,7 +1,5 @@
 import Donuts from "./Donuts.js";
 
-// const container = (document.querySelector('.container').innerText =
-//   'mmmmmmmmm doughnuts.... ahhhhhhh!');
 
 const countEl = document.querySelector("#count");
 const autoclickEl = document.querySelector("#autoclick");
@@ -9,10 +7,10 @@ const multiplierEl = document.querySelector("#multiplier");
 const autoclickCostEl = document.querySelector("#autoclickCost");
 const multiplierCostEl = document.querySelector("#multiplierCost");
 const clickValueEl =document.querySelector("#clickValue");
+const resetEl = document.querySelector("#reset")
 const donutEl = document.querySelector("#donut");
-// const getStatusEl = document.querySelector("#status")
 
-const donut = new Donuts(220, 0, 0);
+const donut = new Donuts(400, 0, 0);
 
 countEl.innerText = donut._count;
 autoclickEl.innerText = donut._autoclick;
@@ -22,7 +20,6 @@ multiplierCostEl.innerText = donut._multiplierCost;
 clickValueEl.innerText = donut._clickValue;
 
 const modal = document.querySelector(".modal")
-
 const companyBtn = document.querySelector(".sub-btn");
 companyBtn.addEventListener("click", () => {
 modal.classList.add("active")
@@ -34,22 +31,24 @@ closeBtn.addEventListener("click", () => {
 })
 
 
-// $('#donut').click(function() {
-//   $(this).toggleClass('rotate');
-// });
+const resetBtn = document.querySelector("#reset");
+resetBtn.addEventListener("click", () => {
+  location.reload();
+})
 
-// function rotate(element, rotation = 300) {
-//   element.style.transform = 'rotate(' + rotation + 'deg)';
-// }
-
-// document.querySelector('#donut').addEventListener('click', function() {
-//   rotate:(this, 300);
-// })
-
-
-const countBtn = document.querySelector("#countBtn");
+const countBtn = document.querySelector(".countBtn");
 countBtn.addEventListener("click", () => {
   donut.click();
+  disableAutoclick();
+  disableMultiplier();
+  countEl.innerText = Math.round(donut._count);
+})
+
+const donutimg = document.querySelector(".donutimg");
+donutimg.addEventListener("click", () => {
+  donut.click();
+  disableAutoclick();
+  disableMultiplier();
   countEl.innerText = Math.round(donut._count);
 })
 
@@ -62,9 +61,11 @@ autoclickBtn.addEventListener("click", () => {
     donut._autoclick++;
     setInterval(() => {
       donut.click();
+      disableAutoclick();
+      disableMultiplier();
       countEl.innerText = Math.round(donut._count);
       autoclickEl.innerText = Math.round(donut._autoclick)
-      autoclickCostEl.innerText = Math.round(donut._autoclickCost);
+      autoclickCostEl.innerText = Math.ceil(donut._autoclickCost);
     }, 1000)
   }
   else {
@@ -72,20 +73,36 @@ autoclickBtn.addEventListener("click", () => {
   }
 })
 
+
+function disableAutoclick(){
+if (donut._count >= donut._autoclickCost) {
+autoclickBtn.removeAttribute("disabled")
+}
+else{
+  autoclickBtn.setAttribute("disabled", "disabled");
+}
+}
+
+function disableMultiplier(){
+  if (donut._count >= donut._multiplierCost){
+    multiplierBtn.removeAttribute("disabled")
+  }
+  else{
+    multiplierBtn.setAttribute("disabled", "disabled")
+  }
+}
+
+
 const multiplierBtn = document.querySelector("#multiplierBtn")
 multiplierBtn.addEventListener("click", () => {
 
   donut.multiplierClick();
+  disableAutoclick();
+      disableMultiplier();
   multiplierEl.innerText = Math.round(donut._multiplier)
-  multiplierCostEl.innerText = Math.round(donut._multiplierCost);
+  multiplierCostEl.innerText = Math.ceil(donut._multiplierCost);
   countEl.innerText = Math.round(donut._count);
-  clickValueEl.innerText = Math.round(donut._clickValue)/100;
+  clickValueEl.innerText = Math.round(donut._clickValue);
 })
 
-// const donutimg = document.querySelector("#donutimg");
-// donutimg.addEventListener("click", ( {
-//   setInterval(() => {
-    
-//   })
-// }))
 
