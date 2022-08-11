@@ -10,7 +10,7 @@ const clickValueEl =document.querySelector("#clickValue");
 const resetEl = document.querySelector("#reset")
 const donutEl = document.querySelector("#donut");
 
-const donut = new Donuts(400, 0, 0);
+const donut = new Donuts(0, 0, 0);
 
 countEl.innerText = donut._count;
 autoclickEl.innerText = donut._autoclick;
